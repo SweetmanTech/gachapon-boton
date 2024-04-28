@@ -9,10 +9,8 @@ const ShareButton = () => {
 
   const shareUrl = `https://warpcast.com/~/compose?text=${text}&embeds%5B%5D=https://gachapon.vercel.app?gachapon=true`;
   const handleClick = async (e: any) => {
-    e.preventDefault();
-    if (e.ctrlKey || e.metaKey) {
-      window.open(shareUrl);
-    } else {
+    if (!(e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
       toast.error('Please hold "Ctrl" / "Cmd" and click to share.');
     }
   };
@@ -29,6 +27,7 @@ const ShareButton = () => {
         justifyContent: "center",
       }}
       onClick={handleClick}
+      href={shareUrl}
     >
       <Image
         src="/warpcast.png"
