@@ -14,6 +14,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center gap-5 bg-white">
       <Input
         placeholder="Collection Address"
+        className="max-w-[333px] text-black"
         onChange={(e) => setCollectionAddress(e.target.value as Address)}
       />
       <ShareButton collection={collectionAddress} />
