@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Address } from "viem";
 
-const ShareButton = () => {
+const ShareButton = ({ collection }: { collection: Address }) => {
   const text = "el gachapon de @energyonchain";
-
-  const shareUrl = `https://warpcast.com/~/compose?text=${text}&embeds%5B%5D=https://gachapon.vercel.app?gachapon=true`;
+  const shareUrl = `https://warpcast.com/~/compose?text=${text}&embeds%5B%5D=https://gachapon.vercel.app?collection=${collection}`;
   const handleClick = async (e: any) => {
     if (!(e.ctrlKey || e.metaKey)) {
       e.preventDefault();
