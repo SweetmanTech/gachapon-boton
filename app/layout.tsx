@@ -4,8 +4,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "TBA iframe",
-  description: "View your nft's TBA and it's nfts.",
+  title: "gachapon",
+  description: "gachapon.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
