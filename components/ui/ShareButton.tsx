@@ -5,15 +5,20 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ShareButton = () => {
-  const url = "el gachapon de @energyonchain https://gachapon.vercel.app?gachapon=true";
-  const handleClick = async () => {
-    await navigator.clipboard.writeText(url);
+  const text = "el gachapon de @energyonchain";
 
-    toast.success("copied frame to clipboard!");
+  const shareUrl = `https://warpcast.com/~/compose?text=${text}&embeds%5B%5D=https://gachapon.vercel.app?gachapon=true`;
+  const handleClick = async (e: any) => {
+    e.preventDefault();
+    if (e.ctrlKey || e.metaKey) {
+      window.open(shareUrl);
+    } else {
+      toast.error('Please hold "Ctrl" / "Cmd" and click to share.');
+    }
   };
 
   return (
-    <button
+    <a
       style={{
         width: 200,
         height: 200,
@@ -33,7 +38,7 @@ const ShareButton = () => {
         className="rounded-full"
       />
       <ToastContainer />
-    </button>
+    </a>
   );
 };
 
