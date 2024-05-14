@@ -18,8 +18,8 @@ const ShareButton = ({ collection }: { collection: Address }) => {
   return (
     <a
       style={{
-        width: 200,
-        height: 200,
+        width: 333,
+        height: 333,
         position: "relative",
         cursor: "pointer",
         display: "flex",
@@ -29,14 +29,8 @@ const ShareButton = ({ collection }: { collection: Address }) => {
       onClick={handleClick}
       href={shareUrl}
     >
-      <Image
-        src="/warpcast.png"
-        alt="logo"
-        layout="fill"
-        objectFit="cover"
-        className="rounded-full"
-      />
-      <ToastContainer />
+      <Image src="/button.webp" alt="logo" layout="fill" objectFit="cover" />
+      <ToastContainer limit={1} />
     </a>
   );
 };
